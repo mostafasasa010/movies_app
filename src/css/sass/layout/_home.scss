@@ -1,0 +1,13 @@
+main.home-page {
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 55px;
+  padding: 10px 0;
+  @include phones {
+    padding: 10px 20px;
+  }
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

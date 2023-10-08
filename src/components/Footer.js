@@ -1,8 +1,10 @@
 function Footer() {
   return (
-    <nav className="footer container">
-      <h1>Footer</h1>
-    </nav>
+    <footer className="footer">
+      <p>
+        ® جميع الحقوق محفوظة لدي المبرمج <span>مصطفي أحمد</span>
+      </p>
+    </footer>
   );
 }
 
