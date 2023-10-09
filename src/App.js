@@ -4,16 +4,17 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Details from "./components/Details";
 
 function App() {
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovies] = useState([]);
   const [total, setTotal] = useState([]);
 
   const getAllMovies = async () => {
     const res = await axios.get(
       "https://api.themoviedb.org/3/movie/popular?api_key=c0c8f40c09633426b3d5a17223ca1ca8&language=ar"
     );
-    setMovie(res.data.results);
+    setMovies(res.data.results);
     setTotal(res.data.total_pages);
   };
 
@@ -21,14 +22,14 @@ function App() {
     const res = await axios.get(
       `https://api.themoviedb.org/3/movie/popular?api_key=c0c8f40c09633426b3d5a17223ca1ca8&language=ar&page=${page}`
     );
-    setMovie(res.data.results);
+    setMovies(res.data.results);
   };
 
   const getTotal = async (pageCount) => {
     const res = await axios.get(
       `https://api.themoviedb.org/3/movie/popular?api_key=c0c8f40c09633426b3d5a17223ca1ca8&language=ar&${pageCount}`
     );
-    setMovie(res.data.results);
+    setMovies(res.data.results);
   };
 
   const search = async (word) => {
@@ -38,7 +39,7 @@ function App() {
       const res = await axios.get(
         `https://api.themoviedb.org/3/search/movie?query=${word}&api_key=c0c8f40c09633426b3d5a17223ca1ca8`
       );
-      setMovie(res.data.results);
+      setMovies(res.data.results);
       setTotal(res.data.total_pages);
     }
   };
@@ -56,6 +57,7 @@ function App() {
           path="/"
           element={<HomePage movie={movie} getPage={getPage} total={total} />}
         />
+        <Route path="/movie/:id" element={<Details />} />
       </Routes>
       <Footer />
     </div>

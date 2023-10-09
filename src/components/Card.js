@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 function Card({ movie }) {
   return (
-    <div className="card">
+    <Link to={`/movie/${movie.id}`} className="card">
       <img
         alt="Movie"
         src={"https://image.tmdb.org/t/p/w500" + movie.poster_path}
@@ -11,7 +12,7 @@ function Card({ movie }) {
         <p>عدد التقيمات: {movie.vote_count}</p>
         <p>التقييم: {movie.vote_average}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 

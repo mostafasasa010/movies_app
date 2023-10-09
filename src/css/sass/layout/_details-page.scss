@@ -1,0 +1,88 @@
+.details {
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 55px;
+  padding: 10px 0;
+  @include phones {
+    padding: 10px 20px;
+  }
+  .section-one {
+    padding: 10px;
+    background-color: #fff8d5;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    @include phones {
+      justify-content: center;
+    }
+    img {
+      width: 250px;
+      border-radius: 15px;
+      border: 3px solid #f39c12;
+      @include phones {
+        width: 100%;
+      }
+    }
+    .section-details {
+      margin-right: 20px;
+      @include phones {
+        text-align: center;
+        margin: 20px 0 0;
+      }
+      div,
+      > p {
+        margin-bottom: 10px;
+        font-size: 24px;
+        font-weight: bold;
+        @include phones {
+          font-size: 20px;
+        }
+        span {
+          color: #e74c3c;
+        }
+      }
+    }
+  }
+  .section-two {
+    padding: 10px 15px;
+    background-color: #fff8d5;
+    border-radius: 15px;
+    margin-top: 20px;
+    p {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+  .btns {
+    padding: 30px 20px;
+    margin-top: 20px;
+    background-color: #fff8d5;
+    border-radius: 15px;
+    text-align: center;
+    a {
+      &:not(:last-of-type) {
+        margin-left: 10px;
+        @include phones {
+          margin-left: 5px;
+        }
+      }
+      button {
+        background-color: #f39c12;
+        color: white;
+        padding: 10px 20px;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 15px;
+        border: none;
+        cursor: pointer;
+        @include phones {
+          padding: 4px 7px;
+          font-size: 14px;
+          font-weight: bold;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+}

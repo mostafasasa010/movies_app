@@ -27,6 +27,10 @@ input {
   font-family: "Cairo", sans-serif;
 }
 
+button {
+  font-family: "Cairo", sans-serif;
+}
+
 .container {
   width: 90%;
   margin: 0 auto;
@@ -36,37 +40,38 @@ input {
     width: 100%;
   }
 }
-.card {
-  position: relative;
-  width: 23%;
-  height: 330px;
-  background-color: white;
+a.card {
+  width: 23% !important;
+  height: 330px !important;
   text-align: center;
   overflow: hidden;
   border-radius: 10px;
   margin: 1%;
   cursor: pointer;
-}
-.card:hover .data {
-  opacity: 1;
-}
-@media (max-width: 768px) {
-  .card {
-    width: 48%;
-    height: 380px;
-  }
-}
-@media (max-width: 480px) {
-  .card {
-    width: 100%;
-    height: 400px;
-  }
-}
-.card img {
+  position: relative;
   width: 100%;
   height: 100%;
 }
-.card .data {
+@media (max-width: 768px) {
+  a.card {
+    width: 48% !important;
+    height: 380px !important;
+  }
+}
+@media (max-width: 480px) {
+  a.card {
+    width: 100% !important;
+    height: 400px !important;
+  }
+}
+a.card:hover .data {
+  opacity: 1;
+}
+a.card img {
+  width: 100%;
+  height: 100%;
+}
+a.card .data {
   position: absolute;
   display: flex;
   align-items: center;
@@ -236,6 +241,109 @@ main.home-page .content {
   position: relative;
   display: flex;
   flex-wrap: wrap;
+}
+
+.details {
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 55px;
+  padding: 10px 0;
+}
+@media (max-width: 480px) {
+  .details {
+    padding: 10px 20px;
+  }
+}
+.details .section-one {
+  padding: 10px;
+  background-color: #fff8d5;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media (max-width: 480px) {
+  .details .section-one {
+    justify-content: center;
+  }
+}
+.details .section-one img {
+  width: 250px;
+  border-radius: 15px;
+  border: 3px solid #f39c12;
+}
+@media (max-width: 480px) {
+  .details .section-one img {
+    width: 100%;
+  }
+}
+.details .section-one .section-details {
+  margin-right: 20px;
+}
+@media (max-width: 480px) {
+  .details .section-one .section-details {
+    text-align: center;
+    margin: 20px 0 0;
+  }
+}
+.details .section-one .section-details div,
+.details .section-one .section-details > p {
+  margin-bottom: 10px;
+  font-size: 24px;
+  font-weight: bold;
+}
+@media (max-width: 480px) {
+  .details .section-one .section-details div,
+  .details .section-one .section-details > p {
+    font-size: 20px;
+  }
+}
+.details .section-one .section-details div span,
+.details .section-one .section-details > p span {
+  color: #e74c3c;
+}
+.details .section-two {
+  padding: 10px 15px;
+  background-color: #fff8d5;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+.details .section-two p {
+  font-size: 18px;
+  font-weight: 500;
+}
+.details .btns {
+  padding: 30px 20px;
+  margin-top: 20px;
+  background-color: #fff8d5;
+  border-radius: 15px;
+  text-align: center;
+}
+.details .btns a:not(:last-of-type) {
+  margin-left: 10px;
+}
+@media (max-width: 480px) {
+  .details .btns a:not(:last-of-type) {
+    margin-left: 5px;
+  }
+}
+.details .btns a button {
+  background-color: #f39c12;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 15px;
+  border: none;
+  cursor: pointer;
+}
+@media (max-width: 480px) {
+  .details .btns a button {
+    padding: 4px 7px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 8px;
+  }
 }
 
 footer.footer {
