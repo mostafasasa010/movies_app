@@ -96,6 +96,61 @@ input {
   max-width: 300px;
 }
 
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-self: flex-end;
+  margin: 10px 0;
+}
+@media (max-width: 480px) {
+  .pagination {
+    margin: 15px 0 0;
+  }
+}
+.pagination .pagi-page,
+.pagination .break-page,
+.pagination .pre-page,
+.pagination .next-page {
+  color: white;
+  font-weight: bold;
+  font-size: 17px;
+}
+@media (max-width: 480px) {
+  .pagination .pagi-page,
+  .pagination .break-page,
+  .pagination .pre-page,
+  .pagination .next-page {
+    margin-bottom: 11px;
+  }
+}
+.pagination .pagi-page .page-link,
+.pagination .pagi-page .break-link,
+.pagination .pagi-page .pre-link,
+.pagination .pagi-page .next-link,
+.pagination .break-page .page-link,
+.pagination .break-page .break-link,
+.pagination .break-page .pre-link,
+.pagination .break-page .next-link,
+.pagination .pre-page .page-link,
+.pagination .pre-page .break-link,
+.pagination .pre-page .pre-link,
+.pagination .pre-page .next-link,
+.pagination .next-page .page-link,
+.pagination .next-page .break-link,
+.pagination .next-page .pre-link,
+.pagination .next-page .next-link {
+  background-color: #f39c12;
+  border: 1px solid #eee;
+  padding: 5px 10px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.pagination .active-link {
+  background-color: #d35400 !important;
+}
+
 nav.nav {
   position: fixed;
   left: 0;
@@ -178,6 +233,7 @@ main.home-page {
   }
 }
 main.home-page .content {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
 }

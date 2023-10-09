@@ -1,0 +1,35 @@
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-self: flex-end;
+  margin: 10px 0;
+  @include phones {
+    margin: 15px 0 0;
+  }
+  .pagi-page,
+  .break-page,
+  .pre-page,
+  .next-page {
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    @include phones {
+      margin-bottom: 11px;
+    }
+    .page-link,
+    .break-link,
+    .pre-link,
+    .next-link {
+      background-color: #f39c12;
+      border: 1px solid #eee;
+      padding: 5px 10px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+  }
+  .active-link {
+    background-color: #d35400 !important;
+  }
+}

@@ -7,17 +7,29 @@ import axios from "axios";
 
 function App() {
   const [movie, setMovie] = useState([]);
+  const [total, setTotal] = useState([]);
 
   const getAllMovies = async () => {
     const res = await axios.get(
       "https://api.themoviedb.org/3/movie/popular?api_key=c0c8f40c09633426b3d5a17223ca1ca8&language=ar"
     );
     setMovie(res.data.results);
+    setTotal(res.data.total_pages);
   };
 
-  useEffect(() => {
-    getAllMovies();
-  }, []);
+  const getPage = async (page) => {
+    const res = await axios.get(
+      `https://api.themoviedb.org/3/movie/popular?api_key=c0c8f40c09633426b3d5a17223ca1ca8&language=ar&page=${page}`
+    );
+    setMovie(res.data.results);
+  };
+
+  const getTotal = async (pageCount) => {
+    const res = await axios.get(
+      `https://api.themoviedb.org/3/movie/popular?api_key=c0c8f40c09633426b3d5a17223ca1ca8&language=ar&${pageCount}`
+    );
+    setMovie(res.data.results);
+  };
 
   const search = async (word) => {
     if (word === "") {
@@ -27,14 +39,23 @@ function App() {
         `https://api.themoviedb.org/3/search/movie?query=${word}&api_key=c0c8f40c09633426b3d5a17223ca1ca8`
       );
       setMovie(res.data.results);
+      setTotal(res.data.total_pages);
     }
   };
+
+  useEffect(() => {
+    getAllMovies();
+    getTotal();
+  }, []);
 
   return (
     <div className="App">
       <Navbar search={search} />
       <Routes>
-        <Route path="/" element={<HomePage movie={movie} />} />
+        <Route
+          path="/"
+          element={<HomePage movie={movie} getPage={getPage} total={total} />}
+        />
       </Routes>
       <Footer />
     </div>
