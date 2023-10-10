@@ -5,7 +5,8 @@ function Pagination({ getPage, total }) {
     getPage(data.selected + 1);
   };
 
-  const pageCount = total > 500 ? total - 39917 : total;
+  const x = total + 500;
+  const pageCount = total > 500 ? x - total : total;
 
   const top = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
