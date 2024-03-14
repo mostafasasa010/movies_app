@@ -42,9 +42,6 @@ function Details() {
           <p>{movie.overview ? movie.overview : "القصة غير متوفره"}</p>
         </div>
         <div className="btns">
-          <a href={movie.homepage} target="_blank" rel="noreferrer">
-            <button>مشاهدة الفيلم</button>
-          </a>
           <Link to={"/"}>
             <button>القائمة الرئيسية</button>
           </Link>
